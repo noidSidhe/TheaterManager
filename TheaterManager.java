@@ -4,8 +4,8 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class TheaterManager exteds Actor //сомнительно Никичан!
-{
+
+class TheaterManager {
 
 	private Boolean workTheater = false;
 	
@@ -18,24 +18,21 @@ class TheaterManager exteds Actor //сомнительно Никичан!
 	}
 	
 	public TheaterManager() {
-		setWorkTheater(true);	
+            getWorkTheater();
+            setWorkTheater(true);
+            getWorkTheater();    
+	}
+        
+        public void run() {
+		System.out.println("running...");
 	}
 	
 	public static void main (String[] args) throws java.lang.Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		/*Actor[] actors = new Actor[9];
-		for(int i=0;i<10;i++) {
-			actors = new Actor(reader.readLine(),Boolean.parseBoolean(reader.readLine());
-		*/
-		System.out.println(getWorkTheater());
+                
 		TheaterManager manager = new TheaterManager();
-		System.out.println(getWorkTheater());		
-		manager.aboutAllActors();
 		manager.run();
-
-
-		
-
+               // Actor act = new Actor();
 			//Tom part
 			/*Spectacle[] spectacles;
 			for(int i=0; i<3;i++){
@@ -46,12 +43,6 @@ class TheaterManager exteds Actor //сомнительно Никичан!
 					reader.readLine()
 				);*/
 			//end
-	}
-	
-	public void run() {
-		System.out.println("Вас приветствует программа управления актерами TheaterManager!");
-		System.out.println(getWorkTheater());
-		
-	}
-
+	}	
+}
 	
