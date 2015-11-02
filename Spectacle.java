@@ -6,7 +6,7 @@ import java.io.*;
 
 class Spectacle
 {
-	public Date startDate;
+	/*public Date startDate;
 	public Date endDate;
 	public int nActorsReqired;
 	public String name;
@@ -20,5 +20,5 @@ class Spectacle
 
 	// public void finalize(){
 
-	// }
+	// }*/
 }
