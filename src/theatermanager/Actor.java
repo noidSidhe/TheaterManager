@@ -15,18 +15,26 @@ public class Actor {
     Map<String, Boolean> actorsState = new HashMap<String, Boolean>();
 	
     public Actor() {
-        actorsState.put("Harry", true); 
+        actorsState.put("Harry", true);
+        actorsState.put("Ron", true);
+        actorsState.put("Germiona", true);
+        actorsState.put("Volondemort", true);
+        actorsState.put("Dumbledor", true);
     }
         
     public void aboutAllActors() {
         System.out.println(actorsState.toString());
-	}
+    }
 	
-    public void addActor(String name, Boolean isFree) throws IOException {
-        actorsState.put(name,isFree);			
+    public void addActor(String name) throws IOException {
+        actorsState.put(name,true);			
     }
 
     public void removeActor(String name) {
-        //do removing
+        actorsState.remove(name);
+    }
+    
+    public void changeEmployment(String name, Boolean isFree) {
+        actorsState.put(name,isFree);
     }
 }

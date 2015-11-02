@@ -15,10 +15,12 @@ public class Spectacle {
     Map<String, Integer> specs = new HashMap<String, Integer>();
 	
     public Spectacle() {
-        specs.put("Novela Harry Potter", 5); 
+        specs.put("Novela 1", 2);
+        specs.put("Novela 2", 3);
+        specs.put("Novela 3", 5);
     }
         
-    public void aboutSpectacles() {
+    public void aboutAllSpectacles() {
         System.out.println(specs.toString());
     }
 	
@@ -27,6 +29,6 @@ public class Spectacle {
     }
 	
     public void removeSpectacle(String name) {
-        //do removing
+        specs.remove(name);
     }
 }
