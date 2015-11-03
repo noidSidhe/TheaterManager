@@ -35,6 +35,6 @@ public class Actor {
     }
     
     public void changeEmployment(String name, Boolean isFree) {
-        actorsState.put(name,isFree);
+        actorsState.replace(name, isFree);
     }
 }

@@ -11,10 +11,16 @@ import java.io.*;
  * @author Nikita
  */
 
-public class TheaterManager {
+public class TheaterManager extends Actor{
 
     private Boolean workTheater = false;
 
+    
+    Actor act = new Actor();
+    Spectacle spect = new Spectacle();
+    
+
+                
     public Boolean getWorkTheater() {
         return workTheater;
     }
@@ -45,8 +51,10 @@ public class TheaterManager {
                 info();
                 break;
             case "edit actors":
+                editActor();
                 break;
             case "edit spectacles":
+                editSpectavcles();
                 break;
             case "rule":
                 rule();
@@ -61,18 +69,40 @@ public class TheaterManager {
     }
     
     public void info() {
-        System.out.println("info here...");  
+        //System.out.println("");
+        act.aboutAllActors();
+        spect.aboutAllSpectacles();
+        
+        
+    }
+    
+    public void editActor() throws IOException {
+        System.out.print("Введите имя изменяемого актера: ");
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
+        System.out.print("Введите показатель его занятости (true - свободен; false - занят): ");
+        Boolean bool = sc.nextBoolean();
+        act.changeEmployment(line,bool);
+    }
+    
+    public void editSpectavcles() {
+        System.out.print("Введите имя изменяемого спектакля: ");
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
+        System.out.print("Введите колличество актеров для этого спектакля: ");
+        Integer num = sc.nextInt();
+        spect.changeSpec(line, num);
     }
     
     public void rule() {
         System.out.println("ruling...");
+        Iterator 
     }
 	
 	public static void main (String[] args) throws java.lang.Exception {
                 
 		TheaterManager manager = new TheaterManager();
-                Actor act = new Actor();
-                Spectacle spect = new Spectacle();
+                
                 
                 System.out.println("Вас привествует программа TheaterManager");
                 System.out.println("Добро пожаловать в командную строку!");
@@ -81,6 +111,8 @@ public class TheaterManager {
                 manager.run();
                 
 	}	
+
+ 
 }
     
 

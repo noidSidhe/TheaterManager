@@ -31,4 +31,8 @@ public class Spectacle {
     public void removeSpectacle(String name) {
         specs.remove(name);
     }
+    
+    public void changeSpec(String name, Integer num) {
+        specs.put(name,num);
+    }
 }
